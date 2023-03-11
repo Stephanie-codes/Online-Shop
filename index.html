@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steph's Shop</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
 </head>
 
 <body>
@@ -17,25 +18,25 @@
             <input type="text" id="search-input" name="search-input" placeholder="Search for products...">
             <button type="submit">Search</button>
         </form>
-        <button class="cart-btn" aria-label="Cart">
+        <button class="cart-btn" aria-label="Cart" onclick="loadCart()">
             <i class="fas fa-shopping-cart"></i>
             <img src="images/shopping-cart-icon.png" alt="Cart Icon">
             <span class="cart-count">0</span>
         </button>
-          
         <br />
         <br />
         <br />
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="navigation">
             <ul>
-                <li><a href="#" class="under">HOME</a></li>
-                <li><a href="#" class="under">SHOP</a></li>
-                <li><a href="#" class="under">CONTACT US</a></li>
-                <li><a href="#" class="under">ABOUT US</a></li>
+                    <li><a href="#" class="under">HOME</a></li>
+                    <li><a href="#" class="under">SHOP</a></li>
+                    <li><a href="#" class="under">CONTACT US</a></li>
+                    <li><a href="#" class="under">ABOUT US</a></li>
             </ul>
         </nav>
     </header>
 
+    <main>
     <h1>Hello! Welcome to Steph's Shop</h1>
     <section>
         <div class="container">
@@ -81,7 +82,8 @@
             <button>Add to Cart</button>
         </div>
     </section>
-
+    </main>
+    
     <footer>
         <div class="footer0"><h1>See you soon!</h1></div>
         <div class="footer1">
@@ -116,8 +118,6 @@
             2023
         </div>
     </footer>
-
-    <script defer src="app.js"></script>
 
 </body>
 </html>
