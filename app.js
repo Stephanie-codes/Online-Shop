@@ -1,3 +1,5 @@
+
+
 function loadCart() {
     window.location.href = "cart.html";
   }
