@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steph's Shop</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="app.js"></script>
 </head>
 
 <body>
@@ -22,11 +21,11 @@
             <input type="text" id="search-input" name="search-input" placeholder="Search for products...">
             <button type="submit">Search</button>
         </form>
-        <button class="cart-btn" aria-label="Cart" onclick="loadCart()">
-            <i class="fas fa-shopping-cart"></i>
+        <button onclick="location.href='cart.html'" class="cart-btn">
+            <i class="Cart"></i>
             <img src="images/shopping-cart-icon.png" alt="Cart Icon">
-            <span class="cart-count">0</span>
-        </button>
+            <span class="cartCount">0</span>
+        </button>          
         <br />
         <br />
         <br />
@@ -42,48 +41,9 @@
     <main>
     <h1>Hello! Welcome to Steph's Shop</h1>
     <section>
-        <div class="container">
-            <img src="images/apples.jpg" alt="Apples Image">
-            <h2>Apples</h2>
-            <p>Sweet and crisp</p>
-            <p><strong>£0.50 each</strong></p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="container">
-            <img src="images/bananas.jpg" alt="Bananas Image">
-            <h2>Bananas</h2>
-            <p>Soft sweet flesh</p>
-            <p><strong>£0.60 each</strong></p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="container">
-            <img src="images/blueberries.jpg" alt="Blueberries Image">
-            <h2>Blueberries</h2>
-            <p>Floral and musky</p>
-            <p><strong>£1.50 (150g)</strong></p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="container">
-            <img src="images/grapes.jpg" alt="Grapes Image">
-            <h2>Grapes</h2>
-            <p>Crisp and seedless</p>
-            <p><strong>£2.00 (500g)</strong></p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="container">
-            <img src="images/oranges.jpg" alt="Oranges Image">
-            <h2>Oranges</h2>
-            <p>Juicy and tangy</p>
-            <p><strong>£0.30 each</strong></p>
-            <button>Add to Cart</button>
-        </div>
-        <div class="container">
-            <img src="images/strawberries.jpg" alt="Strawberries Image">
-            <h2>Strawberries</h2>
-            <p>Sweet aroma</p>
-            <p><strong>£3.20 (250g)</strong></p>
-            <button>Add to Cart</button>
-        </div>
+
+        <div class="shop" id="shop">
+
     </section>
     </main>
     
@@ -123,4 +83,8 @@
     </footer>
 
 </body>
+
+<script defer src="data.js"></script>
+<script defer src="app.js"></script>
+
 </html>

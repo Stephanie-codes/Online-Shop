@@ -17,13 +17,19 @@
           <img src="images/SS.png" alt="Steph's Shop Logo" class="logo-image">
         </a>
     </div>     
-    <iframe id="content" src="index.html#navigation" width="100%" height="50" frameborder="0" scrolling="no" style="margin-top: 55px;"></iframe>
-
+    <button onclick="location.href='cart.html'" class="cart-btn">
+        <i class="Cart"></i>
+        <img src="images/shopping-cart-icon.png" alt="Cart Icon">
+        <span class="cartCount">0</span>
+    </button>    
+    <iframe id="content" src="index.html#navigation" width="100%" height="50" frameborder="0" scrolling="no" style="margin-top: 25px;"></iframe>
     <h2>Your basket</h2>
 </header>
 
 <main>
+    <div id="label" class="text-center"></div>
 
+    <div class="shopping-cart" id="shopping-cart"></div>
 </main>
 
 <footer>
