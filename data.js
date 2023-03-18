@@ -5,6 +5,7 @@ let shopItemsData = [
       price: 3,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/apples.jpg",
+      quantity: 0,
     },
     {
       id: "002",
@@ -12,6 +13,7 @@ let shopItemsData = [
       price: 2,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/bananas.jpg",
+      quantity: 0,
     },
     {
       id: "003",
@@ -19,6 +21,7 @@ let shopItemsData = [
       price: 7,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/blueberries.jpg",
+      quantity: 0,
     },
     {
       id: "004",
@@ -26,6 +29,7 @@ let shopItemsData = [
       price: 5,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/grapes.jpg",
+      quantity: 0,
     },
     {
       id: "005",
@@ -33,6 +37,7 @@ let shopItemsData = [
       price: 4,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/oranges.jpg",
+      quantity: 0,
     },
     {
       id: "006",
@@ -40,6 +45,7 @@ let shopItemsData = [
       price: 7,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/peaches.jpg",
+      quantity: 0,
     },
     {
       id: "007",
@@ -47,6 +53,7 @@ let shopItemsData = [
       price: 9,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/raspberries.jpg",
+      quantity: 0,
     },
     {
       id: "008",
@@ -54,6 +61,7 @@ let shopItemsData = [
       price: 8,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/strawberries.jpg",
+      quantity: 0,
     },
     {
       id: "009",
@@ -61,5 +69,6 @@ let shopItemsData = [
       price: 14,
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
       img: "images/watermelons.jpg",
+      quantity: 0,
     },
   ];
