@@ -40,6 +40,7 @@ let insertShopIntoDOM = () => {
 
 insertShopIntoDOM();
 
+let cart = document.getElementById("counter");
 
 shop.addEventListener('click', event => {
   const button = event.target;
@@ -49,6 +50,7 @@ shop.addEventListener('click', event => {
     const x = shopItemsData.find(x => x.id == itemDiv.id);
     x.quantity++;
     quantitySpan.textContent = x.quantity;
+    cart.textContent = parseInt(cart.textContent) + 1; // update cart total
   } else if (button.classList.contains('minus')) {
     const itemDiv = button.closest('.item');
     const quantitySpan = itemDiv.querySelector('.quantity');
@@ -56,7 +58,7 @@ shop.addEventListener('click', event => {
     if (x.quantity > 1) {
       x.quantity--;
       quantitySpan.textContent = x.quantity;
+      cart.textContent = parseInt(cart.textContent) - 1; // update cart total
     }
   }
 });
-
