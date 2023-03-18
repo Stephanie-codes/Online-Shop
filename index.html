@@ -16,7 +16,7 @@
               <img src="images/SS.png" alt="Steph's Shop Logo" class="logo-image">
             </a>
         </div>          
-        <form action="#" method="get">
+        <form class="search" action="#" method="get">
             <label for="search-input">Search:</label>
             <input type="text" id="search-input" name="search-input" placeholder="Search for products...">
             <button type="submit">Search</button>
@@ -24,7 +24,9 @@
         <button onclick="location.href='cart.html'" class="cart-btn">
             <i class="Cart"></i>
             <img src="images/shopping-cart-icon.png" alt="Cart Icon">
-            <span class="cartCount">0</span>
+            <span id="cartCount" class="cartCount">
+                <span id="counter">0</span>
+            </span>
         </button>          
         <br />
         <br />
