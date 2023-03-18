@@ -1,32 +1,35 @@
+document.addEventListener("DOMContentLoaded", function() {
+  generateShop();
+});
+
 let shop = document.getElementById("shop");
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
+
 let generateShop = () => {
-  return (shop.innerHTML = shopItemsData
-    .map((x) => {
-      let { id, name, desc, img, price } = x;
-      let search = basket.find((y) => y.id === id) || [];
-      return `
-    <div id=product-id-${id} class="item">
-      <img width="220" src=${img} alt="">
+  return (shop.innerHTML = shopItemsData.map((x) => {
+    let { id, name, desc, img, price } = x;
+    return `
+    <div id="product${id}" class="item">
+      <img src=${img} alt="${name} product image">
       <div class="details">
         <h3>${name}</h3>
         <p>${desc}</p>
-        <div class="price-quantity">
-          <h2>$ ${price} </h2>
+        <div class="price-quant">
+          <p>£ ${price} GBP</p>
           <div class="buttons">
-            <i onclick="decrement(${id})" class="minus">-</i>
-            <div id=${id} class="quantity">${
-        search.item === undefined ? 0 : search.item
-      }</div>
-            <i onclick="increment(${id})" class="plus">+</i>
+            <i class="minus">-</i>
+            <div class="quantity">0
+            </div>
+            <i class="plus">+</i>
           </div>
         </div>
       </div>
-  </div>
+    </div>
     `;
-    })
-    .join(""));
+  })
+  .join(""));
 };
 
 generateShop();
+
