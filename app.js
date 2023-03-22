@@ -1,3 +1,5 @@
+
+// Displays products from data.js to index.html
 let shop = document.getElementById("shop");
 
 let generateShop = () => {
@@ -40,6 +42,7 @@ let insertShopIntoDOM = () => {
 
 insertShopIntoDOM();
 
+//Shows quantities from localStorage incase page or tab is closed 
 let updateQuantitiesFromStorage = () => {
   products.forEach((x) => {
     const storedQuantity = localStorage.getItem(`item_${x.id}`);
@@ -53,6 +56,7 @@ let updateQuantitiesFromStorage = () => {
   });
 };
 
+//Updates products quanitites and cart icon total quantity 
 let cartCounter = document.getElementById("counter");
 
 shop.addEventListener('click', event => {
@@ -79,45 +83,3 @@ shop.addEventListener('click', event => {
 });
 
 updateQuantitiesFromStorage();
-
-
-
-
-//CART PAGE.. still under construction...
-let cartHTML = document.getElementById("cartHTML");
-
-//To generate the data for the cart.html page
-const generateCartHTML = () => {
-  const cartItems = products.filter(item => item.quantity > 0);
-  const cartHTML = cartItems.map(item => {
-    const { id, name, desc, img, price, quantity } = item;
-    return `
-    <div id="${id}" class="item">
-      <img src=${img} alt="${name} product image">
-      <div class="details">
-        <h3>${name}</h3>
-        <p>${desc}</p>
-        <div class="price-quant">
-          <p>£ ${price} GBP</p>
-          <div class="buttons">
-            <i class="minus">-</i>
-            <div class="quantity">${quantity}
-            </div>
-            <i class="plus">+</i>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-  }).join("");
-  return cartHTML;
-};
-
-generateCartHTML();
-
-// display cart items on cart.html page
-document.addEventListener("DOMContentLoaded", function() {
-  const cartHTML = generateCartHTML();
-  const cartContainer = document.querySelector('#cartHTML');
-  cartContainer.innerHTML = cartHTML;
-});

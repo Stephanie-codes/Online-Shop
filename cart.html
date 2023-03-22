@@ -18,8 +18,11 @@
         </a>
     </div>     
     <button onclick="location.href='cart.html'" class="cart-btn">
+        <i class="cart"></i>
         <img src="images/shopping-cart-icon.png" alt="Cart Icon">
-        <span class="cartCount">0</span>
+        <span id="cartCount" class="cartCount">
+            <span id="counter">0</span>
+        </span>
     </button>    
     <iframe id="content" src="index.html#navigation" width="100%" height="50" frameborder="0" scrolling="no" style="margin-top: 25px;"></iframe>
     <h2>Your basket</h2>
@@ -27,13 +30,12 @@
 
 <main>
     <section>
-        <div class="cartHTML" id="cartHTML">
-
-        <button type="button" id="clear-cart">Clear cart</button>
-
-        <button type="button" id="checkout">Checkout</button>
-            
+        <div class= "cartHTML" id="cartHTML"></div>
     </section>
+    <div class="button-container">
+        <button type="button" id="clear-cart">Clear cart</button>
+        <button type="button" id="checkout">Checkout</button>
+    </div>
 </main>
 
 <footer>
@@ -43,6 +45,6 @@
 </body>
 
 <script defer src="data.js"></script>
-<script defer src="app.js"></script>
+<script defer src="cart.js"></script>
 
 </html>

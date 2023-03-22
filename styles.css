@@ -12,6 +12,10 @@ h1 {
   color: black;
 }
 
+h2 {
+  text-align: center;
+}
+
 h3 {
   text-align: center;
   color: black;
@@ -238,8 +242,6 @@ font-style: italic;
   text-align: center;
 }
 
-
-
 .cartHTML {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -250,4 +252,32 @@ font-style: italic;
   margin-left: 110px;
   margin-right: 110px;
   background-color: #f8f8f8;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+button {
+  margin: 0 0.5rem;
+}
+
+#clear-cart {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+#checkout {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
 }
