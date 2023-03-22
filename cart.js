@@ -66,8 +66,6 @@ clearCartButton.addEventListener("click", function() {
   cartContainer.innerHTML = cartHTML;
 });
 
-
-
 // function to update cart counter with total items in cart
 const updateQuantitiesFromStorage = () => {
     let total = 0;
@@ -115,12 +113,15 @@ document.addEventListener("DOMContentLoaded", function() {
         quantitySpan.textContent = x.quantity;
         cartCounter.textContent = parseInt(cartCounter.textContent) - 1;
         localStorage.setItem(`item_${x.id}`, x.quantity);
+        // Remove the item from the cart if the quantity is zero
+        if (x.quantity === 0) {
+          itemDiv.remove();
+      }
         updateTotal(); //to update total amount automatically
       }
     });
   });
 });
-
 
 // function to update the total based on the current quantities in the cart
 const updateTotal = () => {
@@ -164,7 +165,3 @@ for (let i = 0; i < cartItems.length; i++) {
 
 // Display the total
 document.getElementById("total").innerHTML = "Total: £" + total.toFixed(2);
-
-
-
-// NEXT STEP MAKE CART ITEMS DISAPPEAR IF QUANTITY REDUCED TO ZERO
