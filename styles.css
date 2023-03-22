@@ -281,3 +281,9 @@ button {
   border-radius: 5px;
   font-size: 1.2em;
 }
+
+#total {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}

@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
       quantitySpan.textContent = x.quantity;
       cartCounter.textContent = parseInt(cartCounter.textContent) + 1;
       localStorage.setItem(`item_${x.id}`, x.quantity);
+      updateTotal(); //to update total amount automatically
     });
   });
   minusButtons.forEach(button => {
@@ -114,7 +115,56 @@ document.addEventListener("DOMContentLoaded", function() {
         quantitySpan.textContent = x.quantity;
         cartCounter.textContent = parseInt(cartCounter.textContent) - 1;
         localStorage.setItem(`item_${x.id}`, x.quantity);
+        updateTotal(); //to update total amount automatically
       }
     });
   });
 });
+
+
+// function to update the total based on the current quantities in the cart
+const updateTotal = () => {
+  let total = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if (key.startsWith("item_")) {
+      let id = key.substring(5, 8);
+      let item = products.find((x) => x.id == id);
+      if (item) {
+        let quantity = parseInt(localStorage.getItem(key));
+        total += item.price * quantity;
+      }
+    }
+  }
+  document.getElementById("total").innerHTML = "Total: £" + total.toFixed(2);
+};
+
+// Get the cart items from localStorage
+let cartItems = [];
+for (let i = 0; i < localStorage.length; i++) {
+  let key = localStorage.key(i);
+  if (key.startsWith("item_")) {
+    let id = key.substring(5, 8);
+    let item = products.find((x) => x.id == id);
+    if (item) {
+      let quantity = parseInt(localStorage.getItem(key));
+      if (quantity > 0) {
+        item.quantity = quantity;
+        cartItems.push(item);
+      }
+    }
+  }
+}
+
+// Calculate the total
+let total = 0;
+for (let i = 0; i < cartItems.length; i++) {
+  total += cartItems[i].price * cartItems[i].quantity;
+}
+
+// Display the total
+document.getElementById("total").innerHTML = "Total: £" + total.toFixed(2);
+
+
+
+// NEXT STEP MAKE CART ITEMS DISAPPEAR IF QUANTITY REDUCED TO ZERO
