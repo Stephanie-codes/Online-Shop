@@ -129,21 +129,6 @@ form {
     font-size: 18px;
   }
 
-/* For smaller screens such as mobiles or tablets etc.
-
-@media (max-width: 1000px) {
-  .shop {
-    grid-template-columns: repeat(2, 300px);
-  }
-}
-
-@media (max-width: 500px) {
-  .shop {
-    grid-template-columns: repeat(1, 300px);
-  }
-}
-*/
-
 .shop {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -286,4 +271,18 @@ button {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+}
+
+/* For smaller screens such as mobiles or tablets etc. */
+
+@media (max-width: 1000px) {
+  .shop {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media (max-width: 500px) {
+  .shop {
+    grid-template-columns: repeat(1, 300px);
+  }
 }

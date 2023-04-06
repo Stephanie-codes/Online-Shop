@@ -83,3 +83,40 @@ shop.addEventListener('click', event => {
 });
 
 updateQuantitiesFromStorage();
+
+
+//Search box
+const searchInput = document.querySelector('#search-input');
+const searchButton = document.querySelector('button[type="submit"]');
+
+searchButton.addEventListener('click', (e) => {
+  e.preventDefault(); 
+  const searchTerm = searchInput.value.toLowerCase(); 
+  const filteredProducts = products.filter(product => {
+    return product.name.toLowerCase().includes(searchTerm) || product.desc.toLowerCase().includes(searchTerm);
+  });
+  shop.innerHTML = filteredProducts.map(product => {
+    return `
+      <div id="${product.id}" class="item">
+        <img src=${product.img} alt="${product.name} product image">
+        <div class="details">
+          <h3>${product.name}</h3>
+          <p>${product.desc}</p>
+          <div class="price-quant">
+            <p>£ ${product.price} GBP</p>
+            <div class="buttons">
+              <i class="minus">-</i>
+              <div class="quantity">${product.quantity}
+              </div>
+              <i class="plus">+</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+});
+
+searchInput.addEventListener('keyup', () => {
+  searchButton.style.display = searchInput.value ? 'block' : 'none';
+});
